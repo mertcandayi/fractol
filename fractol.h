@@ -13,13 +13,14 @@
 # define FRACT_OL_H
 
 # include <stdlib.h>
+# include <math.h>
 # include "minilibx-linux/mlx.h"
 typedef struct s_data {
     void    *mlx;
     void    *win;
     void    *img;
     char    *addr;
-    int     bpp;
+    int     pixel_size;
     int     size_line;
     int     endian;
 }   t_data;
