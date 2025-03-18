@@ -1,3 +1,11 @@
+# Editor
+.vscode/*
+*~
+\#*\#
+
+# Other
+.DS_STORE
+
 # Prerequisites
 *.d
 
