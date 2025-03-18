@@ -23,5 +23,5 @@ void free_resources(t_data *data)
         mlx_destroy_display(data->mlx);
         free(data->mlx);
     }
-    exit(EXIT_SUCCESS);
+    exit (EXIT_SUCCESS);
 }
