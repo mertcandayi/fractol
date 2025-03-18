@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   free_mlx.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: medayi    <medayi@student.42istanbul>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/14 14:36:34 by medayi            #+#    #+#             */
-/*   Updated: 2025/03/14 14:36:34 by medayi           ###   ########.fr       */
+/*   Created: 2025/03/18 12:11:39 by medayi            #+#    #+#             */
+/*   Updated: 2025/03/18 12:11:39 by medayi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FRACT_OL_H
-# define FRACT_OL_H
 
-# include <stdlib.h>
-# include "minilibx-linux/mlx.h"
-typedef struct s_data {
-    void    *mlx;
-    void    *win;
-    void    *img;
-    char    *addr;
-    int     bpp;
-    int     size_line;
-    int     endian;
-}   t_data;
+#include "fractol.h"
 
-void free_resources(t_data *data);
-
-#endif
+void free_resources(t_data *data)
+{
+    if (data->img)
+        mlx_destroy_image(data->mlx, data->img);
+    if (data->win)
+        mlx_destroy_window(data->mlx, data->win);
+    if (data->mlx)
+    {
+        mlx_destroy_display(data->mlx);
+        free(data->mlx);
+    }
+    exit(EXIT_SUCCESS);
+}
