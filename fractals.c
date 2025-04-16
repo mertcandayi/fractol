@@ -48,14 +48,6 @@ int	ft_julia(double zr, double zi, t_fractol *f, int max_iter)
 	return (i);
 }
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
-{
-	char	*dst;
-
-	dst = data->addr + (y * data->size_line + x * (data->bits_per_pixel / 8));
-	*(unsigned int *)dst = color;
-}
-
 void	draw_fractal(t_fractol *f)
 {
 	int		x;

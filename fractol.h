@@ -52,7 +52,6 @@ typedef struct s_fractol
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 double		ft_atof(const char *str);
 int			julia_checker(char *str);
-void		my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int			ft_color(int iterations);
 void		setup_hooks(t_fractol *f);
 void		free_resources(t_fractol *f);
