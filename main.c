@@ -60,7 +60,7 @@ void	init_mlx(t_fractol *f)
 
 void	setup_hooks(t_fractol *f)
 {
-	mlx_hook(f->data.win, 17, 0, (void *)free_resources, f);
+	mlx_hook(f->data.win, 17, 0, free_resources, f);
 	mlx_key_hook(f->data.win, key_press, f);
 	mlx_mouse_hook(f->data.win, mouse_handle, f);
 }

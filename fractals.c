@@ -87,9 +87,4 @@ void	init_fractal(t_fractol *f, int argc, char **argv)
 		f->real = ft_atof(argv[2]);
 		f->imaginary = ft_atof(argv[3]);
 	}
-	else if (f->type == 1)
-	{
-		f->real = -0.7;
-		f->imaginary = 0.27015;
-	}
 }

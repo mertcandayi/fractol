@@ -61,24 +61,28 @@ double	ft_atof(const char *str)
 int	julia_checker(char *str)
 {
 	int	i;
-	int	has_digits;
+	int	dot_count;
 
 	i = 0;
-	has_digits = 0;
+	dot_count = 0;
 	if (str[0] == '-' || str[0] == '+')
 		i++;
+	if (!str[i] || !(str[i] >= '0' && str[i] <= '9'))
+		return (0);
 	while (str[i])
 	{
 		if ((str[i] >= '0' && str[i] <= '9') || str[i] == '.')
 		{
-			if (str[i] >= '0' && str[i] <= '9')
-				has_digits = 1;
+			if (str[i] == '.')
+				dot_count++;
+			if (dot_count > 1)
+				return (0);
 			i++;
 		}
 		else
 			return (0);
 	}
-	return (has_digits);
+	return (1);
 }
 
 void	ft_pixel_put(t_data *data, int x, int y, int color)
