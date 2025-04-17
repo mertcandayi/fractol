@@ -12,10 +12,14 @@
 
 #include "fractol.h"
 
-void	*key_press(int keycode, t_fractol *f)
+int	key_press(int keycode, t_fractol *f)
 {
-	free_resources(f);
-	exit(0);
+	if (keycode == KEY_ESC)
+	{
+		free_resources(f);
+		exit(0);
+	}
+	return (0);
 }
 
 int	mouse_handle(int button, int x, int y, t_fractol *f)

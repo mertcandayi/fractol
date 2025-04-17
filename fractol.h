@@ -57,7 +57,7 @@ void		setup_hooks(t_fractol *f);
 void		free_resources(t_fractol *f);
 void		draw_fractal(t_fractol *f);
 void		init_fractal(t_fractol *f, int argc, char **argv);
-void		*key_press(int keycode, t_fractol *f);
+int			key_press(int keycode, t_fractol *f);
 int			mouse_handle(int button, int x, int y, t_fractol *f);
 void		ft_pixel_put(t_data *data, int x, int y, int color);
 
